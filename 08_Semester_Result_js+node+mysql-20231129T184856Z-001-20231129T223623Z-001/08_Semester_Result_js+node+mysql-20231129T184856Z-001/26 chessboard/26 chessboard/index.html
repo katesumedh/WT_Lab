@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chessboard</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .chessboard {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      width: 90vmin; /* Adjust as needed */
+      height: 90vmin; /* Adjust as needed */
+    }
+
+    .square {
+      width: 100%;
+      padding-bottom: 100%; /* Maintain a square aspect ratio */
+      position: relative;
+    }
+
+    .even {
+      background-color: grey;
+    }
+
+    .odd {
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+
+<div class="chessboard" id="chessboard"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const chessboard = document.getElementById('chessboard');
+    let isEven = true;
+
+    for (let row = 1; row <= 8; row++) {
+      for (let col = 1; col <= 8; col++) {
+        const square = document.createElement('div');
+        square.className = `square ${isEven ? 'even' : 'odd'}`;
+        chessboard.appendChild(square);
+        isEven = !isEven;
+      }
+      isEven = !isEven; // Switch row starting color for the next row
+    }
+  });
+</script>
+
+</body>
+</html>

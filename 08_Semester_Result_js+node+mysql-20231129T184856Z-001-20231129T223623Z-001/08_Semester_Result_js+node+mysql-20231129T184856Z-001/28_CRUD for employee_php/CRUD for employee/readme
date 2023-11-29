@@ -1,0 +1,9 @@
+c(create) r(read) u(update) d(delete)
+
+create mein forms 
+
+a database has to be created
+1. db name crudop in xampp
+2. create 5 column id name email mobile department
+3. save 
+4. htdoc mein folder

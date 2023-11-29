@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy List Contents</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+    <h2>List 1</h2>
+    <ul id="list1">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <h2>List 2</h2>
+    <ul id="list2">
+        <!-- List 2 will be empty initially -->
+    </ul>
+
+    <script>
+        $(document).ready(function () {
+            // Function to copy contents from list1 to list2
+            function copyListContents() {
+                // Clear existing items in list2
+                $('#list2').empty();
+
+                // Copy contents from list1 to list2
+                $('#list1 li').each(function () {
+                    $('#list2').append('<li>' + $(this).text() + '</li>');
+                });
+            }
+
+            // Call the function when the page loads
+            copyListContents();
+        });
+    </script>
+
+</body>
+</html>
